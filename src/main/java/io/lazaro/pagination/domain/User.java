@@ -1,9 +1,7 @@
 package io.lazaro.pagination.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
@@ -16,11 +14,13 @@ import javax.persistence.Id;
  * @version 1.0
  * @since 08/07/2022
  */
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-@Data
+@Getter
+@Setter
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,5 +30,5 @@ public class User {
     private String status;
     private String address;
     private String phone;
-    private String image;
+    private String imageUrl;
 }
